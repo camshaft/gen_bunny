@@ -105,7 +105,7 @@ your project's ``rebar.config`` file.
 ::
 
   {deps, [{gen_bunny, ".*",
-           {git, "http://github.com/dreid/gen_bunny.git", ""}}]}.
+           {git, "http://github.com/CamShaft/gen_bunny.git", {tag, "rabbitmq_v2_8_1"}}}]}.
 
 
 
