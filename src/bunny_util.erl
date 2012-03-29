@@ -187,8 +187,8 @@ connect() ->
 
 connect(direct) ->
     connect({direct, #amqp_params_direct{}});
-connect({Type, Params}) when is_record(Params, amqp_params_direct) orelse is_record(Params, amqp_params_network) ->
-    {ok, Connection} = amqp_connection:start(Type, Params),
+connect({_Type, Params}) when is_record(Params, amqp_params_direct) orelse is_record(Params, amqp_params_network) ->
+    {ok, Connection} = amqp_connection:start(Params),
     {ok, Channel} = amqp_connection:open_channel(Connection),
     {ok, {Connection, Channel}};
 connect({network, Host}) ->
